@@ -140,3 +140,7 @@ body, html {
 .forgot-password:focus{
     color: rgb(12, 97, 33);
 }
+
+.margintop{
+  margin-top: 10px;
+}
