@@ -1,8 +1,30 @@
 <div class="row">
-	<div class="col-xs-12">
+	<div class="col-xs-12 col-md-3">
 		<a class="btn btn-md btn-success"  id="btn_alta_recepcion"><span class="glyphicon glyphicon-plus"></span></a>
-		<button class="btn btn-md btn-warning"><span class="glyphicon glyphicon-pencil" onclick="ejemplo()"></span></button>
-		<button class="btn btn-md btn-danger"><span class="glyphicon glyphicon-minus"></span></button>
+		<button class="btn btn-md btn-warning" id="btn_edita_recepcion"><span class="glyphicon glyphicon-pencil"></span></button>
+		<button class="btn btn-md btn-danger" id="btn_elimina_recepcion"><span class="glyphicon glyphicon-minus"></span></button>
+		<button class="btn btn-md btn-primary" id="btn_exporta_recepcion"><span class="glyphicon glyphicon-list-alt"></span></button>
+	</div>
+	<div class="col-xs-12 col-md-9">
+		<div class="row">
+			<div class="col-xs-3">
+				<div class="input-group input-group-sm">
+				  <span class="input-group-addon">N. Solicitud</span>
+				  <input type="text" class="form-control" >
+				</div>
+			</div>
+			<div class="col-xs-3">
+				<div id='dateInput_inicio'>
+       			 </div>
+			</div>
+			<div class="col-xs-3">
+				<div id='dateInput_fin'>
+        		</div>
+			</div>
+			<div class="col-xs-1">
+				<button class="btn btn-sm btn-success"><span class="glyphicon glyphicon-search"></span> Buscar</button>
+			</div>
+		</div>
 	</div>
 </div>
 <hr>

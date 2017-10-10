@@ -28,21 +28,26 @@ class Recepcion extends CI_Controller {
 
     public function create()
     {
-        echo"<pre>";
-        print_r($_POST);
-        die();
+        // echo"<pre>";
+        // print_r($_POST);
+        // die();
+        $editando = $this->input->post('editando_recepcion');
         $id_autor = $this->input->post('id_autor_l');
         $dependencia = $this->input->post('dependencia');
         $departamento = $this->input->post('departamento');
         $puesto = $this->input->post('puesto');
         $fecha_recepcion = $this->input->post('dtp_input_recepcion');
         $fecha_oficio = $this->input->post('dtp_input_oficio');
-        $n_oficio = $this->input->post('noficio');
+        $n_oficio = $this->input->post('n_oficio');
         $solicitud = $this->input->post('solicitud');
         $observaciones = $this->input->post('observaciones');
-        $this->Solicitud_model->insert_solicitud($id_autor, $dependencia, $departamento, $puesto, $n_oficio, $fecha_recepcion, $fecha_oficio);
+        if($editando == 0 || $editando == "0"){
+            $this->Solicitud_model->insert_solicitud($id_autor, $dependencia, $departamento, $puesto, $n_oficio, $fecha_recepcion, $fecha_oficio, $solicitud, $observaciones);
+        }else{
+            $this->Solicitud_model->update_solicitud($editando, $id_autor, $dependencia, $departamento, $puesto, $n_oficio, $fecha_recepcion, $fecha_oficio, $solicitud, $observaciones);
+        }
         
-        redirect('recepcion/recepcion');
+        redirect('panel/index');
     }
 
     public function baja_solicitudes(){
@@ -58,6 +63,21 @@ class Recepcion extends CI_Controller {
             $data=array();
             $content = $this->load->view('autor/index', $data, TRUE);
             $response = array('status' => 'OK', 'html'=>$content);
+            Utilerias::enviaDataJson(200, $response, $this);
+            exit;
+        }else{
+          $data = array();
+            $data['login_failed'] = TRUE;
+            $this->load->view('login',$data);  
+        }
+    }
+
+    public function elimina_solicitud(){
+         if($this->session->userdata('logged_in')== TRUE){
+            $data=array();
+            $id_eliminar = $this->input->post('id_solicitud');
+            $result = $this->Solicitud_model->elimina_solicitud($id_eliminar);
+            $response = array('status'=>$result);
             Utilerias::enviaDataJson(200, $response, $this);
             exit;
         }else{

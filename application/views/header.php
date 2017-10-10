@@ -16,6 +16,11 @@
     <script type="text/javascript" src="<?php echo base_url(); ?>js/jqwidgets/jqwidgets/jqxdata.js"></script> 
     <script type="text/javascript" src="<?php echo base_url(); ?>js/jqwidgets/jqwidgets/jqxbuttons.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>js/jqwidgets/jqwidgets/jqxscrollbar.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>js/jqwidgets/jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>js/jqwidgets/jqwidgets/jqxdatetimeinput.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>js/jqwidgets/jqwidgets/jqxcalendar.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>js/jqwidgets/jqwidgets/jqxtooltip.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>js/jqwidgets/jqwidgets/globalization/globalize.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>js/jqwidgets/jqwidgets/jqxmenu.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>js/jqwidgets/jqwidgets/jqxcheckbox.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>js/jqwidgets/jqwidgets/jqxlistbox.js"></script>

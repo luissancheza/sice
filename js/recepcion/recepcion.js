@@ -7,16 +7,22 @@ $(function(){
     $("#form_recepcion").validate({
         onclick:false, onfocusout: false, onkeypress:false, onkeydown:false, onkeyup:false,
         rules: {
-            // id_autor_l: {valueNotEquals: "0"},
-            dependencia: { valueNotEquals: "0" },
-            departamento: { valueNotEquals: "0" },
-            puesto: { valueNotEquals: "0" }
+            autor_libro: {required: true},
+            dependencia: {required: true},
+            departamento: {required: true},
+            puesto: {required: true, minlength: 5},
+            n_oficio: {required: true},
+            solicitud: {required: true},
+            observaciones: {required: true}
         },
         messages: {
-            // id_autor_l: {valueNotEquals: " *Seleccione un autor"},
-            dependencia: { valueNotEquals: " *Seleccione una opción" },
-            departamento: { valueNotEquals: " *Seleccione una opción" },
-            puesto: { valueNotEquals: " *Seleccione una opción" }
+            autor_libro: {required: " *Seleccione un autor"},
+            dependencia: { required: " *es requerido" },
+            departamento: { required: " *es requerido" },
+            puesto: { required: " *es requerido", minlength: "*almenos 5 caracteres" },
+            n_oficio: {required: "*es requerido"},
+            solicitud: {required: "*es requerido"},
+            observaciones: {required: "*es requerido"}
         }
     });
 });
@@ -50,5 +56,4 @@ function cierra_modal_seleccionada(id_modal){
 $("#btn_guarda_recepcion").click(function(e){
       e.preventDefault();
       $("#form_recepcion").submit();
-      alert("funciona boton");
 });

@@ -12,21 +12,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-xs-12">
-				<div class="container-fluid">
-					<div class="row">
-						<div class="col-xs-6">
-							<div class="form-group">
-								<input type="text" class="form-control" name="autor_libro" id="autor_libro" placeholder="Autor">
-							</div>
-						</div>
+				<!-- <div class="container-fluid"> -->
+					<!-- <div class="row"> -->
 						<div class="col-xs-1">
 							<button class="btn btn-default" id="btn_levanta_autores"><span class="glyphicon glyphicon-share"></span></button>
 						</div>
-					</div>
-				</div>
+					<!-- </div> -->
+				<!-- </div> -->
 				<?php echo form_open('recepcion/create', array('id' => 'form_recepcion')); ?>
 					<div class="container-fluid">
 					<input type="hidden" class="form-control" name="id_autor_l" id="id_autor_l">
+					<input type="hidden" class="form-control" name="editando_recepcion" id="editando_recepcion" value="0">
+						<div class="row">
+							<div class="col-xs-6">
+								<div class="form-group">
+									<input type="text" class="form-control" name="autor_libro" id="autor_libro" placeholder="Autor" disabled="true">
+								</div>
+							</div>
+						</div>
 						<div class="row">
 							<div class="col-xs-4">
 								<div class="form-group">
@@ -52,7 +55,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<div class="form-group">
 					                <label for="dtp_input_recepcion">Fecha de recepción</label>
 					                <div class="input-group date form_date " data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input_recepcion" data-link-format="yyyy-mm-dd">
-					                    <input class="form-control" size="16" type="text" value="" readonly>
+					                    <input class="form-control" size="16" type="text" value="" readonly name="f_recepcion" id="input_fecha_recep_no">
 										<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
 										<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
 					                </div>
@@ -63,7 +66,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<div class="form-group">
 					                <label for="dtp_input_oficio">Fecha de oficio</label>
 					                <div class="input-group date form_date " data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input_oficio" data-link-format="yyyy-mm-dd">
-					                    <input class="form-control" size="16" type="text" value="" readonly>
+					                    <input class="form-control" size="16" type="text" value="" readonly id="input_fecha_of_no">
 										<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
 										<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
 					                </div>
@@ -102,7 +105,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </html>
 <script type="text/javascript">
     $('.form_datetime').datetimepicker({
-        //language:  'fr',
+        language:  'es',
         weekStart: 1,
         todayBtn:  1,
 		autoclose: 1,
@@ -112,7 +115,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         showMeridian: 1
     });
 	$('.form_date').datetimepicker({
-        language:  'fr',
+        language:  'es',
         weekStart: 1,
         todayBtn:  1,
 		autoclose: 1,
@@ -122,7 +125,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		forceParse: 0
     });
 	$('.form_time').datetimepicker({
-        language:  'fr',
+        language:  'es',
         weekStart: 1,
         todayBtn:  1,
 		autoclose: 1,
