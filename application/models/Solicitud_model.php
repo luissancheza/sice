@@ -50,6 +50,17 @@ class Solicitud_model extends CI_Model{
         return $this->db->delete('solicitud');
     }
 
+    public function busqueda_avanzada($filtro_nombre, $filtro){
+        
+        $query = "SELECT * FROM solicitud s 
+                 INNER JOIN (SELECT CONCAT(nombre, ' ', paterno, ' ', materno) AS nombre, id_autor FROM autor) n_autor ON {$filtro_nombre} n_autor.id_autor = s.id_autor
+                 WHERE  {$filtro}
+                 GROUP BY s.id_solicitud";
+                 echo $query;
+                 die();
+        return $this->db->query($query)->result_array();
+    }
+
 }
 
 ?>

@@ -11,32 +11,39 @@
 <div class="row margintop">
 	<!-- <div class="col-xs-12 col-md-9"> -->
 		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
-			  <input type="text" class="form-control" placeholder="ID de solicitud" >
+			  <input type="text" class="form-control" id="txt_id_solicitud" placeholder="ID de solicitud" >
 		</div>
 		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
-			  <input type="text" class="form-control" placeholder="Dependencia">
+			  <input type="text" class="form-control" id="txt_dependencia_solicitud" placeholder="Dependencia">
 		</div>
 		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
-			  <input type="text" class="form-control" placeholder="Departamento">
+			  <input type="text" class="form-control" id="txt_departamento_solicitud" placeholder="Departamento">
 		</div>
 		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
-			  <input type="text" class="form-control" placeholder="Autor">
-		</div>
-		<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-			<div id='dateInput_inicio'>
-   			 </div>
-		</div>
-		<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-			<div id='dateInput_fin'>
-    		</div>
-		</div>
-		<div class="col-xs-1">
-			<button class="btn btn-sm btn-success"><span class="glyphicon glyphicon-search"></span> Buscar</button>
+			  <input type="text" class="form-control" id="txt_autor_solicitud" placeholder="Autor">
 		</div>
 	<!-- </div> -->
 </div>
 <br>
-<div></div>
+<div class="row">
+	<div class="checkbox">
+	  <label>
+	    <input type="checkbox" value="" id="chk_por_fechas">
+	    Por Fechas
+	  </label>
+	</div>
+	<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+		<div id='dateInput_inicio'>
+			 </div>
+	</div>
+	<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+		<div id='dateInput_fin'>
+		</div>
+	</div>
+	<div class="col-xs-1">
+		<button class="btn btn-sm btn-success" id="btn_busqueda_avanzada"><span class="glyphicon glyphicon-search"></span> Buscar</button>
+	</div>
+</div>
 <br>
 <div class="row">
 	<div class="col-xs-12">

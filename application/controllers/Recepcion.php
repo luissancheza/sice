@@ -86,4 +86,45 @@ class Recepcion extends CI_Controller {
             $this->load->view('login',$data);  
         }
     }
+
+    public function busqueda(){
+        if($this->session->userdata('logged_in')== TRUE){
+            // echo "<pre>";
+            // print_r($_POST);
+            // die();
+            $data=array();
+            $x_fecha = $this->input->post('x_fecha');
+            if($x_fecha == 1 || $x_fecha == '1'){
+
+            }else{
+                $id_solicitud = $this->input->post('id_solicitud');
+                $dependencia = $this->input->post('dependencia');
+                $departamento = $this->input->post('departamento');
+                $autor = $this->input->post('autor');
+                $filtro = "";
+                $filtro_nombre = "";
+                if(isset($id_solicitud) && $id_solicitud != ""){
+                    $filtro .= "  s.id_solicitud = {$id_solicitud}  ";
+                }
+                if(isset($dependencia) && $dependencia != ""){
+                    $filtro .= "  OR s.dependencia LIKE '%{$dependencia}%'";
+                }
+                if(isset($departamento) && $departamento != ""){
+                    $filtro .= "  OR s.departamento LIKE '%{$departamento}%'";
+                }
+                if(isset($autor) && $autor != ""){
+                    $filtro_nombre .= "  n_autor.nombre LIKE '%{$autor}%' AND";
+                }
+                $result = $this->Solicitud_model->busqueda_avanzada($filtro_nombre, $filtro);
+//                 
+            }
+             $response = array('result'=>$result);
+                Utilerias::enviaDataJson(200, $response, $this);
+                exit;
+        }else{
+          $data = array();
+            $data['login_failed'] = TRUE;
+            $this->load->view('login',$data);  
+        }
+    }
 }

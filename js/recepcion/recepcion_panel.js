@@ -195,3 +195,31 @@ function elimina_solicitud(id_solicitud){
              }
         });
 }
+
+$("#btn_busqueda_avanzada").click(function(){
+    busca_filtrado();
+});
+
+function busca_filtrado(){
+    if( $('#chk_por_fechas').is(':checked') ) {
+        var getDate_inicio= $('#dateInput_inicio').jqxDateTimeInput('getText');
+        var getDate_fin= $('#dateInput_fin').jqxDateTimeInput('getText');
+        var parametros = {"x_fecha": 1, "f_inicio": getDate_inicio, "f_fin": getDate_fin};
+        console.log(parametros);
+    }else{
+        var parametros = {"x_fecha": 0, "id_solicitud": $("#txt_id_solicitud").val(), "dependencia": $("#txt_dependencia_solicitud").val(), "departamento": $("#txt_departamento_solicitud").val(), "autor": $("#txt_autor_solicitud").val()}
+        console.log(parametros);
+    }
+    $.ajax({
+        url:"../recepcion/busqueda",
+        method:"POST",
+        data:parametros,
+
+        success: function(data){
+            loadGridrecepcion(data.result);
+        },
+        error: function(error){
+            console.error();
+        }
+    });
+}
