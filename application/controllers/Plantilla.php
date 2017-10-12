@@ -28,6 +28,10 @@ class Plantilla extends CI_Controller {
   public function rtf($sql, $plantilla, $salida, $matequivalencias){
     $pre = time();
     $fsalida = "teleusers/certificados/".$pre.$fsalida;
+    //Paso n° 1 leo la plantilla rtf
+    $txtplantilla = leef($plantilla);
+    //Paso n°2 Saca cabecera, el cuerpo y el final
+    $matriz = explode("sectd", $txtplantilla)
   }
 
 
