@@ -1,9 +1,9 @@
 <div class="row">
 	<div class="col-xs-12 col-md-3">
-		<a class="btn btn-md btn-success"  id="btn_alta_recepcion"><span class="glyphicon glyphicon-plus"></span></a>
-		<button class="btn btn-md btn-warning" id="btn_edita_recepcion"><span class="glyphicon glyphicon-pencil"></span></button>
-		<button class="btn btn-md btn-danger" id="btn_elimina_recepcion"><span class="glyphicon glyphicon-minus"></span></button>
-		<button class="btn btn-md btn-primary" id="btn_exporta_recepcion"><span class="glyphicon glyphicon-list-alt"></span></button>
+		<a class="btn btn-md btn-success"  id="btn_alta_recepcion" title="Nueva solicitud"><span class="glyphicon glyphicon-plus"></span></a>
+		<button class="btn btn-md btn-warning" id="btn_edita_recepcion" title="Editar solicitud"><span class="glyphicon glyphicon-pencil"></span></button>
+		<button class="btn btn-md btn-danger" id="btn_elimina_recepcion" title="Eliminar solicitud"><span class="glyphicon glyphicon-minus"></span></button>
+		<button class="btn btn-md btn-primary" id="btn_exporta_recepcion" title="Generar oficio"><span class="glyphicon glyphicon-list-alt"></span></button>
 	</div>
 </div>
 <hr>
@@ -58,7 +58,7 @@
 <div class="modal" id="modal_resepcion">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
-			<div class="modal-header">
+			<div class="modal-header modalhead">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				<h4 class="modal-title">Registro de la obra</h4>
 			</div>

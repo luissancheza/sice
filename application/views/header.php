@@ -3,9 +3,10 @@
 <head>
 	<meta charset="utf-8">
 	<title>SICE</title>
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<script src="<?php echo base_url(); ?>js/jquery-3.2.1.min.js"></script>
+	<script src="<?php echo base_url(); ?>bootstrap/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="<?php echo base_url(); ?>bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>css/mystyles.css">
 	<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet" integrity="sha384-+ENW/yibaokMnme+vBLnHMphUYxHs34h9lpdbSLuAwGkOKFRl4C34WkjazBtb7eT" crossorigin="anonymous">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>js/jqwidgets/jqwidgets/styles/jqx.base.css" type="text/css" />
 	<link rel="stylesheet" href="<?php echo base_url(); ?>js/sweetalert2/sweetalert2.min.css">

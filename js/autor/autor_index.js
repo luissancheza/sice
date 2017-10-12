@@ -3,9 +3,9 @@ $(function(){
 	$("#form_alta_autor").validate({
 	    onclick:false, onfocusout: false, onkeypress:false, onkeydown:false, onkeyup:false,
 	    rules: {
-	        nombre_a: {required: true, minlength: 5},
-	        paterno_a: {required: true, minlength: 5},
-	        materno_a: {required: true, minlength: 5},
+	        nombre_a: {required: true},
+	        paterno_a: {required: true},
+	        materno_a: {required: true},
 	        correo_a: {required: true, email: true},
 	        telefono_a: {required: true ,minlength:10, maxlength:10}
 	        // departamento: { valueNotEquals: "0" },

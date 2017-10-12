@@ -54,10 +54,18 @@ class Solicitud_model extends CI_Model{
         
         $query = "SELECT * FROM solicitud s 
                  INNER JOIN (SELECT CONCAT(nombre, ' ', paterno, ' ', materno) AS nombre, id_autor FROM autor) n_autor ON {$filtro_nombre} n_autor.id_autor = s.id_autor
-                 WHERE  {$filtro}
+                 WHERE 1 = 1  {$filtro}
                  GROUP BY s.id_solicitud";
-                 echo $query;
-                 die();
+        return $this->db->query($query)->result_array();
+    }
+
+    public function busqueda_avanzada_xfecha($f_inicio, $f_fin){
+        $query = "SELECT s.id_solicitud, s.id_autor, s.dependencia, s.departamento, s.puesto, s.numero_oficio,
+        s.fecha_recepcion, s.fecha_oficio, s.status, CONCAT(a.nombre, ' ', a.paterno, ' ', a.materno) AS nombre, 
+        s.solicitud, s.observacion FROM solicitud s
+        INNER JOIN autor a ON a.id_autor = s.id_autor
+                    WHERE s.fecha_recepcion BETWEEN '{$f_inicio}' AND '{$f_fin}'
+                    GROUP BY s.id_solicitud";
         return $this->db->query($query)->result_array();
     }
 

@@ -95,7 +95,9 @@ class Recepcion extends CI_Controller {
             $data=array();
             $x_fecha = $this->input->post('x_fecha');
             if($x_fecha == 1 || $x_fecha == '1'){
-
+                $f_inicio = date($this->input->post('f_inicio'));
+                $f_fin = $this->input->post('f_fin');
+                $result = $this->Solicitud_model->busqueda_avanzada_xfecha($f_inicio, $f_fin);
             }else{
                 $id_solicitud = $this->input->post('id_solicitud');
                 $dependencia = $this->input->post('dependencia');
@@ -104,7 +106,7 @@ class Recepcion extends CI_Controller {
                 $filtro = "";
                 $filtro_nombre = "";
                 if(isset($id_solicitud) && $id_solicitud != ""){
-                    $filtro .= "  s.id_solicitud = {$id_solicitud}  ";
+                    $filtro .= " AND s.id_solicitud = {$id_solicitud}  ";
                 }
                 if(isset($dependencia) && $dependencia != ""){
                     $filtro .= "  OR s.dependencia LIKE '%{$dependencia}%'";

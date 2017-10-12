@@ -1,6 +1,6 @@
 $(function(){
-$("#dateInput_inicio").jqxDateTimeInput({ width: '250px', height: '32px' });
-$("#dateInput_fin").jqxDateTimeInput({ width: '250px', height: '32px' });
+$("#dateInput_inicio").jqxDateTimeInput({ width: '250px', height: '32px', formatString: "yyyy-MM-dd" });
+$("#dateInput_fin").jqxDateTimeInput({ width: '250px', height: '32px', formatString: "yyyy-MM-dd" });
 	$("#btn_alta_recepcion").click(function(){
 		$.ajax({
 			url:"../recepcion/index",
@@ -217,9 +217,18 @@ function busca_filtrado(){
 
         success: function(data){
             loadGridrecepcion(data.result);
+            limpia_busqueda();
+
         },
         error: function(error){
             console.error();
         }
     });
+}
+
+function limpia_busqueda(){
+    $("#txt_id_solicitud").val("");
+    $("#txt_dependencia_solicitud").val("");
+    $("#txt_departamento_solicitud").val("");
+    $("#txt_autor_solicitud").val("");
 }

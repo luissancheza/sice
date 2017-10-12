@@ -30,8 +30,8 @@ $("#btn_elimina_autor").click(function(){
 			  text: "Una vez eliminado no se podra recuperar el registro",
 			  type: 'warning',
 			  showCancelButton: true,
-			  confirmButtonColor: '#3085d6',
-			  cancelButtonColor: '#d33',
+			  confirmButtonColor: '#81c784',
+			  cancelButtonColor: '#e65100',
 			  confirmButtonText: 'Confirmar!',
 			  cancelButtonText: 'No, cancelar!',
 			  confirmButtonClass: 'btn btn-success',
@@ -68,7 +68,7 @@ $("#btn_edita_autor").click(function(){
 					$("#editando").val(seleccionado.id_autor);
 					$("#nombre_a").val(seleccionado.nombre);
 					$("#paterno_a").val(seleccionado.paterno);
-					$("#materno_a").val(seleccionado.paterno);
+					$("#materno_a").val(seleccionado.materno);
 					$("#correo_a").val(seleccionado.correo);
 					$("#telefono_a").val(seleccionado.telefono);
 					$("#modal_autor").modal("show");
