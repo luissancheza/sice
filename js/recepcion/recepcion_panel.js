@@ -232,3 +232,20 @@ function limpia_busqueda(){
     $("#txt_departamento_solicitud").val("");
     $("#txt_autor_solicitud").val("");
 }
+
+$("#btn_exporta_recepcion").click(function(){
+    $.ajax({
+        url:"../plantilla/genera_archivo",
+        method:"POST",
+        data:"",
+
+        success: function(data){
+            console.log(data);
+            window.location = data.ruta;
+
+        },
+        error: function(error){
+            console.error();
+        }
+    });
+});
