@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>SICE</title>
+	<link rel="shortcut icon" type="image/png" href="<?php echo base_url(); ?>img/imagotipo.jpg"/>
 	<script src="<?php echo base_url(); ?>js/jquery-3.2.1.min.js"></script>
 	<script src="<?php echo base_url(); ?>bootstrap/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="<?php echo base_url(); ?>bootstrap/css/bootstrap.min.css">
