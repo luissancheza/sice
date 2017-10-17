@@ -241,7 +241,13 @@ $("#btn_exporta_recepcion").click(function(){
 
         success: function(data){
             console.log(data);
-            window.location = data.ruta;
+            // var datos = data.ruta;
+            // arregloDeSubCadenas = datos.split("C");
+            // console.log(arregloDeSubCadenas);
+            // return false;
+            // (window.URL || window.webkitURL).revokeObjectURL(save.href);
+             window.open(data.ruta);
+            // location.href = data.ruta;
 
         },
         error: function(error){

@@ -15,7 +15,8 @@ class Plantilla extends CI_Controller {
 
 	public function genera_archivo()
 	{
-    $plantilla = "C:\wamp64\www\sice\plantillas\plantilla.rtf";
+    $server = $_SERVER['DOCUMENT_ROOT']."/sice/";
+    $plantilla = $server."plantillas/plantilla.rtf";
     // $plantilla = $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
     // echo  base_url(); die();
     // echo $plantilla;
@@ -34,7 +35,7 @@ class Plantilla extends CI_Controller {
     // $equivalencias[2][1]="telefono";
 
     $salida = $this->rtf($respuesta, $plantilla, "certificado.rtf", $equivalencias);
-    $response = array('ruta'=>$salida);
+    $response = array('ruta'=>"../../".$salida);
     Utilerias::enviaDataJson(200, $response, $this);
         exit;
 	}
@@ -70,11 +71,6 @@ class Plantilla extends CI_Controller {
       }
       fputs($punt,$txtplantilla);//-- AGREGAMOS EL CONTENIDO AL NUEVO FICHERO
       fclose($punt);//- CERRAMOS LA CONEXION DEL FICHERO
-      // if($this->retorno=="fichero"){//-- RETORNA EN MODO DE DESCARGA
-      //   header ("Content-Disposition: attachment; filename=".$this->fsalida."\n\n"); 
-      //   header ("Content-Type: application/octet-stream");
-      //   readfile($this->dirsalida.$this->fsalida);
-      // }elseif($this->retorno=="nombre"){//-- RETORNA EL NOMBRE DEL FICHERO
         return $fsalida;
       // }
     }
