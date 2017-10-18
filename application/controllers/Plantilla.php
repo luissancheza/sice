@@ -17,24 +17,12 @@ class Plantilla extends CI_Controller {
 	{
     $server = $_SERVER['DOCUMENT_ROOT']."/sice/";
     $plantilla = $server."plantillas/plantilla.rtf";
-    // $plantilla = $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
-    // echo  base_url(); die();
-    // echo $plantilla;
-    // die();
-    $respuesta = $this->Plantilla_model->demo();
-    $equivalencias = array(
-        '#*NOMBRE*#' => "n_completo",
-        '#*CORREO*#' => "correo",
-        '#*TELEFONO*#' => "telefono"
-        );
-    // $equivalencias[0][0]="#*NOMBRE*#";
-    // $equivalencias[0][1]="n_completo";
-    // $equivalencias[1][0]="#*CORREO*#";
-    // $equivalencias[1][1]="correo";
-    // $equivalencias[2][0]="#*TELEFONO*#";
-    // $equivalencias[2][1]="telefono";
 
-    $salida = $this->rtf($respuesta, $plantilla, "certificado.rtf", $equivalencias);
+    $id_autor = $this->input->post("id_autor");
+
+    $respuesta = $this->Plantilla_model->recupera_datos_oficio1($id_autor);
+
+    $salida = $this->rtf($respuesta, $plantilla, "certificado.rtf");
     $response = array('ruta'=>"../../".$salida);
     Utilerias::enviaDataJson(200, $response, $this);
         exit;
@@ -57,7 +45,7 @@ class Plantilla extends CI_Controller {
     return $todo;
   }
 
-  public function rtf($filas, $plantilla, $fsalida, $matequivalencias){
+  public function rtf($filas, $plantilla, $fsalida){
     $pre = time();
     $fsalida = "plantillas/".$pre.$fsalida;// para el nombre del archivo de salida
 

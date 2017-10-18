@@ -234,24 +234,28 @@ function limpia_busqueda(){
 }
 
 $("#btn_exporta_recepcion").click(function(){
+     var rowindex = $('#jqxgridRecepcion').jqxGrid('getselectedrowindex');
+    if(rowindex != -1){
+        var seleccionado = $('#jqxgridRecepcion').jqxGrid('getrowdata', rowindex);
+        vamos_por_plantilla(seleccionado.id_autor);
+    }else{
+        swal('Seleccione un registro para descargar');
+    }
+    
+});
+
+function vamos_por_plantilla(seleccionado){
     $.ajax({
         url:"../plantilla/genera_archivo",
         method:"POST",
-        data:"",
+        data:"id_autor="+seleccionado,
 
         success: function(data){
             console.log(data);
-            // var datos = data.ruta;
-            // arregloDeSubCadenas = datos.split("C");
-            // console.log(arregloDeSubCadenas);
-            // return false;
-            // (window.URL || window.webkitURL).revokeObjectURL(save.href);
              window.open(data.ruta);
-            // location.href = data.ruta;
-
         },
         error: function(error){
             console.error();
         }
     });
-});
+}
