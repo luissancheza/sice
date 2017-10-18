@@ -68,7 +68,7 @@
 				<ul class="nav nav-pills nav-stacked">
 				  <li class="active"><a href="#">Panel</a></li>
 				  <li><a href="<?php echo site_url("panel/index")?>">Recepción</a></li>
-				  <li><a data-toggle="modal" data-target="#exampleModalLong">Dictamen</a></li>
+				  <li><a href="<?php echo site_url("dictamen/index")?>">Dictamen</a></li>
 				  <li class="dropdown">
 				    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
 				      Catalogos <span class="caret"></span>
