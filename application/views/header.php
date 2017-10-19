@@ -75,8 +75,10 @@
 				    </a>
 				    <ul class="dropdown-menu">
 				      <li><a href="<?php echo site_url("autor/index")?>">Autores</a></li>
+				      <li class="divider"></li>
 				      <li><a href="#">Obras</a></li>
-				      <li><a href="#">Something else here</a></li>
+				      <li class="divider"></li>
+				      <li><a href="<?php echo site_url("dictaminador/index")?>">Dictaminadores</a></li>
 				      <li class="divider"></li>
 				      <li><a href="#">Separated link</a></li>
 				    </ul>

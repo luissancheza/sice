@@ -1,14 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Dictamen extends CI_Controller {
+class Dictaminador extends CI_Controller {
 
     function __construct(){
         parent::__construct();
         $this->load->helper('url');
         $this->load->library('Utilerias');
         $this->load->library('My_PHPMailer');
-        $this->load->model('Dictamen_model');
+        $this->load->model('Dictaminador_model');
     }
 
 
@@ -18,7 +18,7 @@ class Dictamen extends CI_Controller {
         $data = array();
         $data['error'] = '';
 
-        Utilerias::pagina_basica($this, 'dictamen/index', $data);
+        Utilerias::pagina_basica($this, 'dictaminadores/index', $data);
         }else{
           $data = $this->data;
             $data['login_failed'] = TRUE;
@@ -26,10 +26,10 @@ class Dictamen extends CI_Controller {
         }
 	}
 
-  public function baja_dictamenes(){
+  public function baja_dictamenadores(){
     if($this->session->userdata('logged_in')== TRUE){
-      $dictamenes = $this->Dictamen_model->get_dictamenes();
-      $response = array('dictamenes'=>$dictamenes);
+      $dictamenes = $this->Dictaminador_model->get_dictaminadores();
+      $response = array('dictaminadores'=>$dictamenes);
 
         Utilerias::enviaDataJson(200, $response, $this);
         exit;
@@ -39,8 +39,5 @@ class Dictamen extends CI_Controller {
             $this->load->view('login',$data);  
         }
   }
-
-
-
 
 }

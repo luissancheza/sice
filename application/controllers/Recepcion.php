@@ -7,6 +7,7 @@ class Recepcion extends CI_Controller {
         parent::__construct();
         $this->load->model('Autor_model');
         $this->load->model('Solicitud_model');
+        $this->load->model('Dictamen_model');
         $this->load->helper('form');
         $this->load->library('form_validation');
         $this->load->library('Utilerias');
@@ -42,7 +43,10 @@ class Recepcion extends CI_Controller {
         $solicitud = $this->input->post('solicitud');
         $observaciones = $this->input->post('observaciones');
         if($editando == 0 || $editando == "0"){
-            $this->Solicitud_model->insert_solicitud($id_autor, $dependencia, $departamento, $puesto, $n_oficio, $fecha_recepcion, $fecha_oficio, $solicitud, $observaciones);
+            $id_recuperado = $this->Solicitud_model->insert_solicitud($id_autor, $dependencia, $departamento, $puesto, $n_oficio, $fecha_recepcion, $fecha_oficio, $solicitud, $observaciones);
+            if($id_recuperado != 0){
+                $status = $this->Dictamen_model->insert_dictamen($id_recuperado);
+            }
         }else{
             $this->Solicitud_model->update_solicitud($editando, $id_autor, $dependencia, $departamento, $puesto, $n_oficio, $fecha_recepcion, $fecha_oficio, $solicitud, $observaciones);
         }

@@ -17,7 +17,8 @@ class Solicitud_model extends CI_Model{
             'solicitud' => $solicitud,
             'observacion' => $observacion
         );
-        return $this->db->insert('solicitud', $data);
+        $this->db->insert('solicitud', $data);
+        return $this->db->insert_id();
     }
 
     public function update_solicitud($editando, $id_autor, $dependencia, $departamento, $puesto, $n_oficio, $fecha_recepcion, $fecha_oficio, $solicitud, $observaciones){
