@@ -1,5 +1,20 @@
+$("#btn_alta_dictaminador").click(function(){
+$.ajax({
+			url:"../dictaminador/muestra_alta",
+			method:"POST",
+			data:"",
 
+			success:function(data){
+				var html = data.html;
+				$("#modal_dictaminador .modal-body").empty();
+				$("#modal_dictaminador .modal-body").append(html);
+				$("#modal_dictaminador").modal("show");
+			},
+			error: function(error){
 
+			}
+		});
+})
 
 
 

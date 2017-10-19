@@ -41,6 +41,4 @@ class Dictamen extends CI_Controller {
   }
 
 
-
-
 }

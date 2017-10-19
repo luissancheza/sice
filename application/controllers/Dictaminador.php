@@ -40,4 +40,12 @@ class Dictaminador extends CI_Controller {
         }
   }
 
+  public function muestra_alta(){
+        $data = array();
+        $content = $this->load->view('dictaminador/alta_dictaminador', $data, TRUE);
+        $response = array('status' => 'OK', 'html'=>$content);
+        Utilerias::enviaDataJson(200, $response, $this);
+        exit;
+    }
+
 }

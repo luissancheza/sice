@@ -15,4 +15,18 @@
 		</div>
 	</div>
 </div>
+
+<div class="modal" id="modal_dictaminador">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header modalhead">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">Registro de Dictaminador</h4>
+			</div>
+			<div class="modal-body">
+				<!-- Contenido del modal -->
+			</div>
+		</div>
+	</div>
+</div> 
 <script src="<?php echo base_url(); ?>js/dictaminador/panel_dictaminador.js"></script>
