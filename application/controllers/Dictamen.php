@@ -9,6 +9,7 @@ class Dictamen extends CI_Controller {
         $this->load->library('Utilerias');
         $this->load->library('My_PHPMailer');
         $this->load->model('Dictamen_model');
+        $this->load->model('Dictaminador_model');
     }
 
 
@@ -38,6 +39,17 @@ class Dictamen extends CI_Controller {
             $data['login_failed'] = TRUE;
             $this->load->view('login',$data);  
         }
+  }
+
+  public function muestra_form_email(){
+      $data = array();
+      $data["style"] = "class='form-group'";
+      $data['correos'] = $this->Dictaminador_model->recupera_name_email();
+
+      $content = $this->load->view('dictamen/email_invitacion', $data, TRUE);
+      $response = array('status' => 'OK', 'html'=>$content);
+      Utilerias::enviaDataJson(200, $response, $this);
+      exit;
   }
 
 

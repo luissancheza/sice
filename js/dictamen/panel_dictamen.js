@@ -1,5 +1,20 @@
+$("#btn_dictamen_invitacion").click(function(){
+	$.ajax({
+			url:"../dictamen/muestra_form_email",
+			method:"POST",
+			data:"",
 
+			success:function(data){
+				var html = data.html;
+				$("#modal_dictamen .modal-body").empty();
+				$("#modal_dictamen .modal-body").append(html);
+				$("#modal_dictamen").modal("show");
+			},
+			error: function(error){
 
+			}
+		});
+});
 
 
 

@@ -1,6 +1,6 @@
-$("#btn_dictamen_invitacion").click(function(event) {
-	alert("Funiona boton");
-});
+// $("#btn_dictamen_invitacion").click(function(event) {
+// 	alert("Funiona boton");
+// });
 
 	// function Mail(){
 	// 	var _this = this;

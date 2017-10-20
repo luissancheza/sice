@@ -1,5 +1,4 @@
 $(function(){
-	console.log("LISTO TODO FUL");
     $.validator.addMethod("valueNotEquals", function(value, element, arg){
        return arg !== value;
     });
